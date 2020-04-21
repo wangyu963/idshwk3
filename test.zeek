@@ -9,7 +9,7 @@ function length_stat(IPtoUA: set[string]):int {
 	return re;
 }
 
-#At http_header event, it will work out the statistics of relationship between src-ip and user-agent, being stored at table http_dict(global value).
+
 event http_header(c: connection, is_orig: bool, name: string, value: string){
 	if(name == "USER-AGENT") {
 		if(c$id$orig_h in http_dict) {
